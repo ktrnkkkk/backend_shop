@@ -1,6 +1,7 @@
 const mongoose = require('mongoose'); 
 const bcrypt = require('bcrypt')
-const crypto = require('crypto')
+const crypto = require('crypto');
+const { array } = require('../config/cloudinary');
 
 
 var userSchema = new mongoose.Schema({
@@ -37,8 +38,7 @@ var userSchema = new mongoose.Schema({
         
     },
     address:{
-        type: Array,
-        default: false
+        type: String,
     },
     wishlist: [{ type: mongoose.Types.ObjectId, ref: 'Product' }],
     isBlocked: {
